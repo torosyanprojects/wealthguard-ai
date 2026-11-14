@@ -39,7 +39,6 @@ app.add_middleware(
     allow_methods=["POST", "GET"],
     allow_headers=["Content-Type"],
 )
-done
 class FinancialRequest(BaseModel):
     financial_data: Dict[str, Optional[float]] = Field(...)
 
