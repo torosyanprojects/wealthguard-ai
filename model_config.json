@@ -1,0 +1,13 @@
+{
+  "project": "WealthGuard AI",
+  "model_type": "Random Forest",
+  "target": "target_bankrupt_1y",
+  "feature_count": 62,
+  "warning_threshold": 0.85,
+  "threshold_selected_on": "validation",
+  "training_observations": 216023,
+  "created_at": "2026-11-14T13:35:01.497997+00:00",
+  "score_calibrated": false,
+  "validation_status": "provisional",
+  "intended_use": "Educational financial risk screening"
+}
