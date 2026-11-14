@@ -6,6 +6,7 @@ import pandas as pd
 
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Dict, Optional
 
@@ -28,6 +29,17 @@ app = FastAPI(
     version="1.0.0"
 )
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://wealthguard-frontend-iota.vercel.app"
+    ],
+    allow_credentials=False,
+    allow_methods=["POST", "GET"],
+    allow_headers=["Content-Type"],
+)
+done
 class FinancialRequest(BaseModel):
     financial_data: Dict[str, Optional[float]] = Field(...)
 
