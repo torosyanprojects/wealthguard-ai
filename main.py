@@ -93,14 +93,15 @@ def health():
 def analyze(request: FinancialRequest):
     data = request.financial_data
 
-    allowed = set(legacy_features) | {"previous_revenue"}
-    unknown = sorted(set(data) - allowed)
+   # Accept financial indicators from the existing website.
+# The model uses only its trained features.
+allowed = set(legacy_features) | {
+    "previous_revenue",
+    "operating_cash_flow"
+}
 
-    if unknown:
-        raise HTTPException(
-            status_code=422,
-            detail={"unsupported_indicators": unknown}
-        )
+# Ignore extra fields for prediction while retaining
+# the original data for financial recommendations.
 
     row = clean_values(data, legacy_features)
     coverage = float(row.notna().mean(axis=1).iloc[0])
