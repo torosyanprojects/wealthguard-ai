@@ -1,0 +1,62 @@
+[
+  {
+    "risk_category": "Profitability & Unit Economics",
+    "cases": 281,
+    "percentage": 27.33
+  },
+  {
+    "risk_category": "Other / Unclassified",
+    "cases": 232,
+    "percentage": 22.57
+  },
+  {
+    "risk_category": "Operations & Scaling",
+    "cases": 162,
+    "percentage": 15.76
+  },
+  {
+    "risk_category": "Management & Strategy",
+    "cases": 143,
+    "percentage": 13.91
+  },
+  {
+    "risk_category": "Competition",
+    "cases": 135,
+    "percentage": 13.13
+  },
+  {
+    "risk_category": "Market Demand & Product Fit",
+    "cases": 121,
+    "percentage": 11.77
+  },
+  {
+    "risk_category": "Regulation & Legal",
+    "cases": 93,
+    "percentage": 9.05
+  },
+  {
+    "risk_category": "Cash Flow & Funding",
+    "cases": 92,
+    "percentage": 8.95
+  },
+  {
+    "risk_category": "Debt & Financial Distress",
+    "cases": 54,
+    "percentage": 5.25
+  },
+  {
+    "risk_category": "Fraud & Governance",
+    "cases": 52,
+    "percentage": 5.06
+  },
+  {
+    "risk_category": "Technology & Disruption",
+    "cases": 24,
+    "percentage": 2.33
+  },
+  {
+    "risk_category": "Customer & Platform Dependency",
+    "cases": 7,
+    "percentage": 0.68
+  }
+]
