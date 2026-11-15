@@ -29,10 +29,10 @@ def required_asset(filename):
     return path
 
 # Preserve the original model and its configuration.
-legacy_model = joblib.load(required_asset("wealthguard_model.joblib"))
+legacy_model = joblib.load(required_asset("fundex_pipeline.joblib"))
 
 with open(required_asset("feature_names.json")) as f:
-    legacy_features = json.load(f)
+    legacy_features = joblib.load(required_asset("fundex_features.joblib"))
 
 with open(required_asset("model_config.json")) as f:
     config = json.load(f)
