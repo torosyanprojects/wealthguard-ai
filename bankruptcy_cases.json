@@ -1,0 +1,650 @@
+[
+  {
+    "name": "Party City Holdco Inc.",
+    "petition_date": "2023-01-17",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 3103694000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1592058/000119312523009847/d643228d8k.htm"
+  },
+  {
+    "name": "INVACARE CORP",
+    "petition_date": "2023-01-31",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 909531000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/742112/000074211223000008/ivc-20230127.htm"
+  },
+  {
+    "name": "TUESDAY MORNING CORP/DE",
+    "petition_date": "2023-02-14",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 388184000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/878726/000110465923022784/tm237022d2_8k.htm"
+  },
+  {
+    "name": "Avaya Holdings Corp.",
+    "petition_date": "2023-02-14",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 5887000000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1418100/000119312523039349/d811637d8k.htm"
+  },
+  {
+    "name": "Sorrento Therapeutics, Inc.",
+    "petition_date": "2023-02-13",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 855636000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/850261/000110465923023902/tm237448d1_8k.htm"
+  },
+  {
+    "name": "Loyalty Ventures Inc.",
+    "petition_date": "2023-03-10",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 2323727000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1870997/000187099723000010/lylt-20230309x8k.htm"
+  },
+  {
+    "name": "SVB FINANCIAL GROUP",
+    "petition_date": "2023-03-17",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 220355000000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/719739/000119312523073665/d485308d8k.htm"
+  },
+  {
+    "name": "National CineMedia, Inc.",
+    "petition_date": "2023-04-11",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 821600000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1377630/000137763023000056/ncmllc-20230411.htm"
+  },
+  {
+    "name": "BED BATH & BEYOND INC",
+    "petition_date": "2023-04-23",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 5130572000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/886158/000119312523111754/d465247d8k.htm"
+  },
+  {
+    "name": "LANNETT CO INC",
+    "petition_date": "2023-05-02",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 572307000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/57725/000110465923055287/tm2314233d3_8k.htm"
+  },
+  {
+    "name": "QualTek Services Inc.",
+    "petition_date": "2023-05-24",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 729072000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1839412/000110465923066357/tm2317209d1_8k.htm"
+  },
+  {
+    "name": "DIEBOLD NIXDORF, Inc",
+    "petition_date": "2023-06-01",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 3316500000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/28823/000119312523158463/d404278d8k.htm"
+  },
+  {
+    "name": "Cyxtera Technologies, Inc.",
+    "petition_date": "2023-06-04",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 3316100000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1794905/000119312523160378/d497336d8k.htm"
+  },
+  {
+    "name": "iMedia Brands, Inc.",
+    "petition_date": "2023-06-28",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 508058000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/870826/000110465923076399/tm2320234d1_8k.htm"
+  },
+  {
+    "name": "Lordstown Motors Corp.",
+    "petition_date": "2023-06-27",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 660751000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1759546/000110465923074944/tm2319664d1_8k.htm"
+  },
+  {
+    "name": "AppHarvest, Inc.",
+    "petition_date": "2023-07-23",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 609804000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1807707/000180770723000104/apph-20230719.htm"
+  },
+  {
+    "name": "AMYRIS, INC.",
+    "petition_date": "2023-08-09",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 824932000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1365916/000136591623000094/amrs-20230804.htm"
+  },
+  {
+    "name": "Yellow Corp",
+    "petition_date": "2023-08-06",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 2503900000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/716006/000119312523204370/d483482d8k.htm"
+  },
+  {
+    "name": "Proterra Inc",
+    "petition_date": "2023-08-07",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 916690000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1820630/000162828023027865/ptra-20230807.htm"
+  },
+  {
+    "name": "Orbital Infrastructure Group, Inc.",
+    "petition_date": "2023-08-23",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 419007000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1108967/000143774923024627/oeg20230824_8k.htm"
+  },
+  {
+    "name": "Mallinckrodt plc",
+    "petition_date": "2023-08-28",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 6485900000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1567892/000110465923095504/tm2324934d1_8k.htm"
+  },
+  {
+    "name": "SmileDirectClub, Inc.",
+    "petition_date": "2023-09-29",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 700560000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1775625/000177562523000109/sdc-20230925.htm"
+  },
+  {
+    "name": "RITE AID CORP",
+    "petition_date": "2023-10-15",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 8367125000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/84129/000110465923109236/tm2328505d1_8k.htm"
+  },
+  {
+    "name": "AKUMIN INC.",
+    "petition_date": "2023-10-22",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 1809238000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1776197/000119312523260391/d559087d8k.htm"
+  },
+  {
+    "name": "Sunlight Financial Holdings Inc.",
+    "petition_date": "2023-10-30",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 553566000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1821850/000110465923112707/tm2329469d1_8k.htm"
+  },
+  {
+    "name": "WeWork Inc.",
+    "petition_date": "2023-11-06",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 18339000000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1813756/000119312523271902/d522028d8k.htm"
+  },
+  {
+    "name": "PENNSYLVANIA REAL ESTATE INVESTMENT TRUST",
+    "petition_date": "2023-12-10",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 1886044000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/77281/000119312523292055/d644338d8k.htm"
+  },
+  {
+    "name": "EBIX INC",
+    "petition_date": "2023-12-17",
+    "filing_year": 2023,
+    "chapter": 11,
+    "assets_usd": 1561991000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/814549/000119312523298190/d629924d8k.htm"
+  },
+  {
+    "name": "AUDACY, INC.",
+    "petition_date": "2024-01-07",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 3284893000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1067837/000119312524003834/d676036d8k.htm"
+  },
+  {
+    "name": "Cano Health, Inc.",
+    "petition_date": "2024-02-04",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 1944376000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1800682/000119312524023512/d733561d8k.htm"
+  },
+  {
+    "name": "Invitae Corp",
+    "petition_date": "2024-02-13",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 1954116000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1501134/000150113424000016/nvta-20240213.htm"
+  },
+  {
+    "name": "CorEnergy Infrastructure Trust, Inc.",
+    "petition_date": "2024-02-25",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 494962646,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1347652/000134765224000017/corr-20240225.htm"
+  },
+  {
+    "name": "Enviva Inc.",
+    "petition_date": "2024-03-12",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 2892344000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1592057/000110465924033709/tm248430d1_8k.htm"
+  },
+  {
+    "name": "JOANN Inc.",
+    "petition_date": "2024-03-18",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 2260200000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1834585/000119312524069648/d775196d8k.htm"
+  },
+  {
+    "name": "CURO Group Holdings Corp.",
+    "petition_date": "2024-03-25",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 2789193000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1711291/000110465924038503/tm249524d1_8k.htm"
+  },
+  {
+    "name": "Acorda Therapeutics, Inc.",
+    "petition_date": "2024-04-01",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 395595000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1008848/000095017024039674/acor-20240331.htm"
+  },
+  {
+    "name": "View, Inc.",
+    "petition_date": "2024-04-02",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 619026000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1811856/000119312524085064/d86667d8k.htm"
+  },
+  {
+    "name": "Casa Systems Inc",
+    "petition_date": "2024-04-03",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 398294000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1333835/000119312524085992/d818677d8k.htm"
+  },
+  {
+    "name": "EXPRESS, INC.",
+    "petition_date": "2024-04-22",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 1467758000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1483510/000119312524103828/d827429d8k.htm"
+  },
+  {
+    "name": "Cue Health Inc.",
+    "petition_date": "2024-05-28",
+    "filing_year": 2024,
+    "chapter": 7,
+    "assets_usd": 608561000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1628945/000119312524148163/d837440d8k.htm"
+  },
+  {
+    "name": "Fisker Inc./DE",
+    "petition_date": "2024-06-17",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 2376337000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1720990/000119312524167032/d798771d8k.htm"
+  },
+  {
+    "name": "DELTA APPAREL, INC",
+    "petition_date": "2024-06-30",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 512974000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1101396/000143774924021637/dla20240619_8k.htm"
+  },
+  {
+    "name": "Vintage Wine Estates, Inc.",
+    "petition_date": "2024-07-24",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 561154000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1834045/000095017024085857/vwe-20240719.htm"
+  },
+  {
+    "name": "CONNS INC",
+    "petition_date": "2024-07-23",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 2444042000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1223389/000119312524184837/d855036d8k.htm"
+  },
+  {
+    "name": "2U, Inc.",
+    "petition_date": "2024-07-25",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 1538417000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1459417/000119312524184277/d875063d8k.htm"
+  },
+  {
+    "name": "SUNPOWER CORP",
+    "petition_date": "2024-08-05",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 1556702000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/867773/000086777324000086/spwr-20240802.htm"
+  },
+  {
+    "name": "LL Flooring Holdings, Inc.",
+    "petition_date": "2024-08-11",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 568815000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1396033/000119312524198385/d794510d8k.htm"
+  },
+  {
+    "name": "BIG LOTS INC",
+    "petition_date": "2024-09-09",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 3625489000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883524000062/big-20240905.htm"
+  },
+  {
+    "name": "Edgio, Inc.",
+    "petition_date": "2024-09-09",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 470397000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1391127/000119312524215572/d795614d8k.htm"
+  },
+  {
+    "name": "TUPPERWARE BRANDS CORP",
+    "petition_date": "2024-09-17",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 714300000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1008654/000100865424000068/tup-20240917.htm"
+  },
+  {
+    "name": "Vertex Energy Inc.",
+    "petition_date": "2024-09-24",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 892678000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/890447/000199937124012469/vntr_8k-091924.htm"
+  },
+  {
+    "name": "Spirit Airlines, Inc.",
+    "petition_date": "2024-11-18",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 9559456000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1498710/000095010324016405/dp220813_8k.htm"
+  },
+  {
+    "name": "Vroom, Inc.",
+    "petition_date": "2024-11-13",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 1646711000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1580864/000119312524256669/d902566d8k.htm"
+  },
+  {
+    "name": "CareMax, Inc.",
+    "petition_date": "2024-11-17",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 1058117000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1813914/000095017024127766/cmax-20241115.htm"
+  },
+  {
+    "name": "Independence Contract Drilling, Inc.",
+    "petition_date": "2024-12-02",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 406111000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1537028/000153702824000057/icdi-20241127x8k.htm"
+  },
+  {
+    "name": "Container Store Group, Inc.",
+    "petition_date": "2024-12-22",
+    "filing_year": 2024,
+    "chapter": 11,
+    "assets_usd": 969509000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1411688/000110465924131067/tm2431779d1_8k.htm"
+  },
+  {
+    "name": "Mondee Holdings, Inc.",
+    "petition_date": "2025-01-14",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 392391000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1828852/000182885225000010/mond-20250107.htm"
+  },
+  {
+    "name": "Canoo Inc.",
+    "petition_date": "2025-01-17",
+    "filing_year": 2025,
+    "chapter": 7,
+    "assets_usd": 544676000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1750153/000162828025001918/goev-20250117.htm"
+  },
+  {
+    "name": "Nikola Corp",
+    "petition_date": "2025-02-19",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 1274857000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1731289/000173128925000004/nkla-20250218.htm"
+  },
+  {
+    "name": "Danimer Scientific, Inc.",
+    "petition_date": "2025-03-18",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 698131000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1779020/000095017025041367/dnmr-20250318.htm"
+  },
+  {
+    "name": "23andMe Holding Co.",
+    "petition_date": "2025-03-23",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 608211000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1804591/000119312525060817/d933650d8k.htm"
+  },
+  {
+    "name": "Global Clean Energy Holdings, Inc.",
+    "petition_date": "2025-04-16",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 1598001000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/748790/000121390025033420/ea0238127-8k_global.htm"
+  },
+  {
+    "name": "WW INTERNATIONAL, INC.",
+    "petition_date": "2025-05-06",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 696873000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/105319/000119312525114307/d934787d8k.htm"
+  },
+  {
+    "name": "Sunnova Energy International Inc.",
+    "petition_date": "2025-06-08",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 13353699000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm"
+  },
+  {
+    "name": "WOLFSPEED, INC.",
+    "petition_date": "2025-06-30",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 7984600000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/895419/000119312525153145/d755867d8k.htm"
+  },
+  {
+    "name": "TPI COMPOSITES, INC",
+    "petition_date": "2025-08-11",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 752645000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1455684/000117184325005450/f8k_081525.htm"
+  },
+  {
+    "name": "ModivCare Inc",
+    "petition_date": "2025-08-20",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 1677163000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1220754/000143774925027478/modv20250818_8k.htm"
+  },
+  {
+    "name": "Spirit Aviation Holdings, Inc.",
+    "petition_date": "2025-08-29",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 9595178000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1498710/000095010325011031/dp233724_8k.htm"
+  },
+  {
+    "name": "OFFICE PROPERTIES INCOME TRUST",
+    "petition_date": "2025-10-30",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 3822286000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1456772/000110465925104631/tm2529875d1_8k.htm"
+  },
+  {
+    "name": "Sonder Holdings Inc.",
+    "petition_date": "2025-11-14",
+    "filing_year": 2025,
+    "chapter": 7,
+    "assets_usd": 1218036000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1819395/000162828025052329/son-20251107.htm"
+  },
+  {
+    "name": "IROBOT CORP",
+    "petition_date": "2025-12-14",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 669915000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1159167/000119312525318337/d97115d8k.htm"
+  },
+  {
+    "name": "Luminar Technologies, Inc./DE",
+    "petition_date": "2025-12-15",
+    "filing_year": 2025,
+    "chapter": 11,
+    "assets_usd": 403414000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1758057/000114036125045494/ef20061234_8k.htm"
+  },
+  {
+    "name": "Fat Brands, Inc",
+    "petition_date": "2026-01-26",
+    "filing_year": 2026,
+    "chapter": 11,
+    "assets_usd": 1289178000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1705012/000149315226003696/form8-k.htm"
+  },
+  {
+    "name": "CUMULUS MEDIA INC",
+    "petition_date": "2026-03-04",
+    "filing_year": 2026,
+    "chapter": 11,
+    "assets_usd": 1118649000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1058623/000110465926023855/tm267873d1_8k.htm"
+  },
+  {
+    "name": "QVC Group, Inc.",
+    "petition_date": "2026-04-16",
+    "filing_year": 2026,
+    "chapter": 11,
+    "assets_usd": 8981000000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1355096/000110465926044521/tm2611635d1_8k.htm"
+  },
+  {
+    "name": "Trinseo PLC",
+    "petition_date": "2026-05-26",
+    "filing_year": 2026,
+    "chapter": 11,
+    "assets_usd": 2655000000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1519061/000110465926066376/tm2615591d1_8k.htm"
+  },
+  {
+    "name": "Inotiv, Inc.",
+    "petition_date": "2026-06-03",
+    "filing_year": 2026,
+    "chapter": 11,
+    "assets_usd": 771114000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/720154/000110465926069950/tm2616729d1_8k.htm"
+  },
+  {
+    "name": "GoHealth, Inc.",
+    "petition_date": "2026-06-07",
+    "filing_year": 2026,
+    "chapter": 11,
+    "assets_usd": 1382067000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1808220/000162828026041369/goco-20260605.htm"
+  },
+  {
+    "name": "Sleep Number Corp",
+    "petition_date": "2026-06-12",
+    "filing_year": 2026,
+    "chapter": 11,
+    "assets_usd": 836791000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/827187/000095010326008891/dp248362_8k.htm"
+  },
+  {
+    "name": "Hughes Satellite Systems (EchoStar 8-K)",
+    "petition_date": "2026-08-02",
+    "filing_year": 2026,
+    "chapter": 11,
+    "assets_usd": 59882397000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1415404/000141540426000038/sats-20260728x8k.htm"
+  },
+  {
+    "name": "Leslie's, Inc.",
+    "petition_date": "2026-09-30",
+    "filing_year": 2026,
+    "chapter": 11,
+    "assets_usd": 989493000,
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1821806/000119312526408874/d175109d8k.htm"
+  }
+]
