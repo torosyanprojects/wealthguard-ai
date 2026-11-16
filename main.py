@@ -6,14 +6,21 @@ import pandas as pd
 
 from pathlib import Path
 from functools import lru_cache
+from typing import Dict, Optional
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from typing import Dict, Optional
 
 from wealthguard_engine import analyze_company, analyze_finances
 
+
+# ==================================================
+# FILE LOCATIONS
+# ==================================================
+
 BASE_DIR = Path(__file__).resolve().parent
+
 
 def find_asset(filename, folders=("", "models", "data")):
     for folder in folders:
@@ -22,40 +29,70 @@ def find_asset(filename, folders=("", "models", "data")):
             return path
     return None
 
+
 def required_asset(filename):
     path = find_asset(filename)
     if path is None:
-        raise FileNotFoundError(f"Missing asset: {filename}")
+        raise FileNotFoundError(
+            f"Missing required asset: {filename}"
+        )
     return path
 
-# Preserve the original model and its configuration.
-legacy_model = joblib.load(required_asset("fundex_pipeline.joblib"))
 
-with open(required_asset("feature_names.json")) as f:
-    legacy_features = joblib.load(required_asset("fundex_features.joblib"))
+# ==================================================
+# LOAD TRAINED MODELS
+# ==================================================
 
-with open(required_asset("model_config.json")) as f:
-    config = json.load(f)
+fundex_model = joblib.load(
+    required_asset("fundex_pipeline.joblib")
+)
 
-# Load the OpenFundEx pipeline and features.
-fundex_model = joblib.load(required_asset("fundex_pipeline.joblib"))
-fundex_features = joblib.load(required_asset("fundex_features.joblib"))
+fundex_features = list(
+    joblib.load(required_asset("fundex_features.joblib"))
+)
 
-# Load additional models.
+config_path = find_asset("model_config.json")
+
+if config_path:
+    with open(config_path, encoding="utf-8") as f:
+        config = json.load(f)
+else:
+    config = {}
+
+warning_threshold = float(
+    config.get("warning_threshold", 0.5)
+)
+
+
 @lru_cache(maxsize=2)
 def load_regional_model(region):
     if region not in ("us", "poland"):
         raise ValueError("Unsupported model")
 
-    model = joblib.load(required_asset(f"{region}_model.joblib"))
-    imputer = joblib.load(required_asset(f"{region}_imputer.joblib"))
-    features = joblib.load(required_asset(f"{region}_features.joblib"))
+    model = joblib.load(
+        required_asset(f"{region}_model.joblib")
+    )
+
+    imputer = joblib.load(
+        required_asset(f"{region}_imputer.joblib")
+    )
+
+    features = list(
+        joblib.load(
+            required_asset(f"{region}_features.joblib")
+        )
+    )
 
     return model, imputer, features
 
+
+# ==================================================
+# FASTAPI APPLICATION
+# ==================================================
+
 app = FastAPI(
     title="WealthGuard AI API",
-    version="2.0.0"
+    version="2.1.0"
 )
 
 app.add_middleware(
@@ -64,47 +101,77 @@ app.add_middleware(
         "https://wealthguard-frontend-iota.vercel.app"
     ],
     allow_credentials=False,
-    allow_methods=["GET", "POST"],
-    allow_headers=["Content-Type"]
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"]
 )
+
 
 class FinancialRequest(BaseModel):
     financial_data: Dict[str, Optional[float]] = Field(...)
 
+
+# ==================================================
+# DATA PROCESSING
+# ==================================================
+
 def clean_values(data, features):
-    row = pd.DataFrame([{
-        name: data.get(name, np.nan)
-        for name in features
-    }])
-    return row.apply(
-        pd.to_numeric, errors="coerce"
-    ).replace([np.inf, -np.inf], np.nan)
+    row = pd.DataFrame([
+        {
+            name: data.get(name, np.nan)
+            for name in features
+        }
+    ])
+
+    return (
+        row.apply(pd.to_numeric, errors="coerce")
+        .replace([np.inf, -np.inf], np.nan)
+    )
+
+
+def feature_coverage(row):
+    return float(
+        row.notna().mean(axis=1).iloc[0]
+    )
+
+
+def financial_report(data):
+    return analyze_finances(data)
+
+
+# ==================================================
+# HEALTH CHECK
+# ==================================================
 
 @app.get("/health")
 def health():
     return {
         "status": "healthy",
         "project": "WealthGuard AI",
-        "version": "2.0.0"
+        "version": "2.1.0",
+        "main_model": "fundex",
+        "available_models": [
+            "fundex",
+            "us",
+            "poland"
+        ]
     }
 
-# Keep the original endpoint compatible with the frontend.
+
+# ==================================================
+# MAIN WEBSITE ANALYSIS
+# ==================================================
+
 @app.post("/analyze")
 def analyze(request: FinancialRequest):
+
     data = request.financial_data
 
-   # Accept financial indicators from the existing website.
-# The model uses only its trained features.
-allowed = set(legacy_features) | {
-    "previous_revenue",
-    "operating_cash_flow"
-}
+    row = clean_values(
+        data,
+        fundex_features
+    )
 
-# Ignore extra fields for prediction while retaining
-# the original data for financial recommendations.
-
-    row = clean_values(data, legacy_features)
-    coverage = float(row.notna().mean(axis=1).iloc[0])
+    coverage = feature_coverage(row)
 
     if coverage < 0.50:
         return {
@@ -112,123 +179,208 @@ allowed = set(legacy_features) | {
             "model_score": None,
             "prediction_status": "insufficient_data",
             "feature_coverage": round(coverage, 4),
-            **analyze_finances(data),
-            "message": "More financial data is needed to generate a model score."
+            **financial_report(data),
+            "message": (
+                "More financial data is needed "
+                "to generate a model score."
+            )
         }
 
-    report = analyze_company(
-        data,
-        legacy_model,
-        legacy_features,
-        float(config["warning_threshold"])
-    )
+    try:
+        report = analyze_company(
+            data,
+            fundex_model,
+            fundex_features,
+            warning_threshold
+        )
 
-    report["prediction_status"] = "provisional"
-    report["feature_coverage"] = round(coverage, 4)
-    return report
+        report["prediction_status"] = "provisional"
+        report["feature_coverage"] = round(coverage, 4)
+
+        return report
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Financial analysis failed: {type(exc).__name__}"
+        )
+
+
+# ==================================================
+# FUNDEX MODEL ANALYSIS
+# ==================================================
 
 @app.post("/analyze/fundex")
 def analyze_fundex(request: FinancialRequest):
+
     data = request.financial_data
 
-    allowed = set(fundex_features) | {
-        "previous_revenue", "operating_cash_flow"
-    }
-    unknown = sorted(set(data) - allowed)
+    row = clean_values(
+        data,
+        fundex_features
+    )
 
-    if unknown:
-        raise HTTPException(
-            status_code=422,
-            detail={"unsupported_indicators": unknown}
-        )
-
-    row = clean_values(data, fundex_features)
-    coverage = float(row.notna().mean(axis=1).iloc[0])
+    coverage = feature_coverage(row)
 
     if coverage < 0.50:
         return {
             "project": "WealthGuard AI",
+            "model": "fundex",
             "model_score": None,
             "prediction_status": "insufficient_data",
             "feature_coverage": round(coverage, 4),
-            **analyze_finances(data)
+            **financial_report(data)
         }
 
-    score = float(fundex_model.predict_proba(row)[0, 1])
-
-    return {
-        "project": "WealthGuard AI",
-        "model": "OpenFundEx",
-        "model_score": round(score, 4),
-        "score_type": "Uncalibrated model output",
-        "prediction_status": "provisional",
-        "feature_coverage": round(coverage, 4),
-        **analyze_finances(data),
-        "disclaimer": (
-            "Experimental financial screening only. "
-            "The score is not a calibrated bankruptcy probability."
+    try:
+        score = float(
+            fundex_model.predict_proba(row)[0, 1]
         )
-    }
+
+        return {
+            "project": "WealthGuard AI",
+            "model": "fundex",
+            "model_score": round(score, 4),
+            "score_type": "Uncalibrated model output",
+            "prediction_status": "provisional",
+            "feature_coverage": round(coverage, 4),
+            **financial_report(data),
+            "disclaimer": (
+                "Experimental financial screening only. "
+                "The score is not a calibrated "
+                "bankruptcy probability."
+            )
+        }
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=f"FundEx prediction failed: {type(exc).__name__}"
+        )
+
+
+# ==================================================
+# REGIONAL MODEL ANALYSIS
+# ==================================================
 
 @app.post("/analyze/{region}")
-def analyze_region(region: str, request: FinancialRequest):
+def analyze_region(
+    region: str,
+    request: FinancialRequest
+):
+
     if region not in ("us", "poland"):
-        raise HTTPException(status_code=404, detail="Unknown model")
-
-    model, imputer, features = load_regional_model(region)
-    data = request.financial_data
-
-    unknown = sorted(set(data) - set(features))
-    if unknown:
         raise HTTPException(
-            status_code=422,
-            detail={"unsupported_indicators": unknown}
+            status_code=404,
+            detail="Unknown model"
         )
 
-    row = clean_values(data, features)
-    coverage = float(row.notna().mean(axis=1).iloc[0])
+    try:
+        model, imputer, features = load_regional_model(region)
 
-    if coverage < 0.50:
+        data = request.financial_data
+
+        row = clean_values(data, features)
+
+        coverage = feature_coverage(row)
+
+        if coverage < 0.50:
+            return {
+                "project": "WealthGuard AI",
+                "model": region,
+                "model_score": None,
+                "prediction_status": "insufficient_data",
+                "feature_coverage": round(coverage, 4),
+                **financial_report(data)
+            }
+
+        processed = imputer.transform(row)
+
+        score = float(
+            model.predict_proba(processed)[0, 1]
+        )
+
         return {
+            "project": "WealthGuard AI",
             "model": region,
-            "model_score": None,
-            "prediction_status": "insufficient_data",
-            "feature_coverage": round(coverage, 4)
+            "model_score": round(score, 4),
+            "score_type": "Uncalibrated model output",
+            "prediction_status": "provisional",
+            "feature_coverage": round(coverage, 4),
+            **financial_report(data),
+            "disclaimer": (
+                "Experimental financial screening only. "
+                "Not a calibrated bankruptcy probability."
+            )
         }
 
-    processed = imputer.transform(row)
-    score = float(model.predict_proba(processed)[0, 1])
-
-    return {
-        "model": region,
-        "model_score": round(score, 4),
-        "score_type": "Uncalibrated model output",
-        "prediction_status": "provisional",
-        "feature_coverage": round(coverage, 4),
-        "disclaimer": (
-            "Experimental model output. "
-            "Not a calibrated bankruptcy probability."
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Regional prediction failed: {type(exc).__name__}"
         )
+
+
+# ==================================================
+# AVAILABLE MODEL INFORMATION
+# ==================================================
+
+@app.get("/models")
+def available_models():
+    return {
+        "project": "WealthGuard AI",
+        "models": [
+            {
+                "id": "fundex",
+                "endpoint": "/analyze/fundex",
+                "feature_count": len(fundex_features)
+            },
+            {
+                "id": "us",
+                "endpoint": "/analyze/us"
+            },
+            {
+                "id": "poland",
+                "endpoint": "/analyze/poland"
+            }
+        ],
+        "default_endpoint": "/analyze"
     }
 
+
+# ==================================================
+# DASHBOARD DATA
+# ==================================================
+
 def read_dashboard(filename):
-    path = find_asset(filename, ("", "data"))
+
+    path = find_asset(
+        filename,
+        ("", "data")
+    )
+
     if path is None:
         raise HTTPException(
             status_code=503,
-            detail=f"Dashboard data unavailable: {filename}"
+            detail=(
+                "Dashboard data unavailable: "
+                + filename
+            )
         )
 
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
+
 @app.get("/api/risk-patterns")
 def risk_patterns():
     return read_dashboard("risk_patterns.json")
 
+
 @app.get("/api/bankruptcy-trends")
 def bankruptcy_trends():
     return read_dashboard("bankruptcy_trends.json")
+
 
 @app.get("/api/bankruptcy-cases")
 def bankruptcy_cases():
