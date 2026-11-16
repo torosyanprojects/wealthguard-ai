@@ -202,7 +202,7 @@ def analyze(request: FinancialRequest):
     except Exception as exc:
         raise HTTPException(
             status_code=500,
-            detail=f"Financial analysis failed: {type(exc).__name__}"
+           detail=f"Financial analysis failed: {type(exc).__name__}: {str(exc)}"
         )
 
 
